@@ -5,9 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitFinder App</title>
+    <script src="https://kit.fontawesome.com/b967490b4c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main>
+        <section class="switch">
+            <header>
+                <div class="header-content">
+                    <div class="header-text">gitfinder</div>
+                    <button class="switch-button">
+                        LIGHT
+                        <i class="fa-solid fa-sun switch-icon"></i>
+                    </button>
+                </div>
+            </header>
+        </section>
+        <section class="searcher">
+            <div class="search-text">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search Github username..." class="search-input">
+            </div>
+            <button class="search-button">Search</button>
+        </section>
+
+        <section class="account">
+            <div class="container">
+                <div class="account-content">
+                    <div class="avatar"><img src="" alt="" class="avatar-img"></div>
+                    <div class="account-info">
+                        <div class="username-data">Github Username</div>
+                        <div class="id-data">@githubusername</div>
+                        <div class="join-data">Joined 01 May 2022</div>
+                    </div>
+                </div>
+                <div class="bio-data">Github profile BIO</div>
+                <div class="account-data">
+                    <div class="repos-data">
+                        <h3 class="data-title">Repos</h3>
+                        <h2 class="data-subtitle repos-data-subtitle">0</h2>
+                    </div>
+                    <div class="followers-data">
+                        <h3 class="data-title">Followers</h3>
+                        <h2 class="data-subtitle followers-data-subtitle">0</h2>
+                    </div>
+                    <div class="following-data">
+                        <h3 class="data-title">Following</h3>
+                        <h2 class="data-subtitle following-data-subtitle">0</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="main.js"></script>
 </body>
 </html>
