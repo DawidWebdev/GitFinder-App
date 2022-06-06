@@ -44,7 +44,7 @@ body
 
 main
 {   
-    width: 100%;
+    width: 370px;
 }
 
 section
@@ -96,6 +96,7 @@ section
     align-items: center;
     padding: .5rem 1rem;
     border-radius: 15px;
+    background-color: var(--search-bg-color);
 }
 
 .searcher i 
@@ -132,8 +133,8 @@ section
 .avatar img
 {
     background-color: var(--black);
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
@@ -141,17 +142,16 @@ section
 {
     display: flex;
     justify-content: space-between;
-}
-
-.searcher
-{
-    background-color: var(--search-bg-color);
+    background-color: var(--body-bg-color);
+    padding: 1rem 2rem;
+    border-radius: 15px;
 }
 
 input
 {
     background: none;
     border: none;
+    outline: none;
     color: var(--black);
 }
 
@@ -169,7 +169,158 @@ input::placeholder
     padding: 2rem 1.5rem;
 }
 
-.account-data
+.account-info
 {
-    background-color: var(--body-bg-color);
+    display: grid;
+    align-content: center;
+}
+
+.username-data
+{
+    color: var(--black);
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    font-size: 14px;
+}
+
+.id-data
+{
+    color: var(--search-color);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    margin-top: .5rem;
+}
+
+.join-data
+{
+    color: var(--black);
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 12px;
+    margin-top: .5rem;
+}
+
+.bio-data
+{
+    color: var(--black);
+    margin: 1.5rem 0;
+    font-size: 12px;
+    letter-spacing: .2rem;
+    font-family: 'Space Mono', monospace;
+}
+
+h3
+{
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Red Hat Mono', monospace;
+    margin: 0;
+}
+
+h2
+{
+    margin: 0;
+    color: var(--black);
+    font-size: 16px;
+    margin-top: .5rem;
+}
+
+.data-class
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    main
+    {
+        width: 700px;
+    }
+
+    .account
+    {
+        margin-top: 1rem;
+        padding: 2rem;
+    }
+    .searcher
+    {
+        padding: .5rem 1rem .5rem 2rem;
+    }
+input::placeholder
+{   
+    color: var(--black);
+    opacity: .5;
+}
+
+.account-content
+{
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    gap: 1rem;
+}
+    .avatar img
+{
+    background-color: var(--black);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.username-data
+{
+    color: var(--black);
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    font-size: 14px;
+}
+.id-data
+{
+    color: var(--search-color);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    margin-top: .5rem;
+}
+.join-data
+{
+    color: var(--black);
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 12px;
+    margin-top: .5rem;
+}
+.bio-data
+{
+    color: var(--black);
+    margin: 1.5rem 0;
+    font-size: 12px;
+    letter-spacing: .2rem;
+    font-family: 'Space Mono', monospace;
+}
+h3
+{
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Red Hat Mono', monospace;
+    margin: 0;
+}
+
+h2
+{
+    margin: 0;
+    color: var(--black);
+    font-size: 16px;
+    margin-top: .5rem;
+}
+
+.data-class
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 }
