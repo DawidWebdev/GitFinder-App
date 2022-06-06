@@ -2,6 +2,7 @@
 :root
 {
     --body-bg-color: #141d2f;
+    --body-bg-color-darker: #141d2f;
     --head-color: #ffffff;
     --darklight-color: #ffffff;
     --search-bg-color: #1e2a47;
@@ -15,13 +16,15 @@
 
 .lightmode
 {
-    --body-bg-color: #f6f8ff;
+    --body-bg-color: #ededee;
+    --body-bg-color-darker: rgb(41, 66, 94);
     --head-color: #222731;
-    --darklight-color: #697c9a;
-    --search-bg-color: #4b6a9b;
+    --darklight-color: #363c45;
+    --search-bg-color: #3a5c7c;
     --black: black;
     --follow-color: #4b6a9b;
     --followTotal-color: #2b3442;
+    --search-color: rgba(114, 177, 255, 0.748);
 }
 
 body
@@ -75,6 +78,13 @@ section
     font-size: 13px;
     letter-spacing: .1rem;
     padding: 0;
+    transition: all .2s ease;
+}
+
+.switch-button:hover
+{
+    cursor: pointer;
+    transform: translateX(-5px);
 }
 
 .switch-button i
@@ -118,9 +128,17 @@ section
     height: 100%;
     background-color: var(--search-color);
     color: var(--black);
+    opacity: .8;
     padding: 1rem;
     font-weight: 700;
     border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.search-button:hover
+{
+    cursor: pointer;
+    opacity: 1;
 }
 
 .account-content
@@ -142,7 +160,7 @@ section
 {
     display: flex;
     justify-content: space-between;
-    background-color: var(--body-bg-color);
+    background-color: var(--body-bg-color-darker);
     padding: 1rem 2rem;
     border-radius: 15px;
 }
@@ -198,6 +216,7 @@ input::placeholder
     font-family: 'Red Hat Mono', monospace;
     font-size: 12px;
     margin-top: .5rem;
+    opacity: .7;
 }
 
 .bio-data
@@ -207,6 +226,11 @@ input::placeholder
     font-size: 12px;
     letter-spacing: .2rem;
     font-family: 'Space Mono', monospace;
+}
+
+.location-data
+{
+    display: none;
 }
 
 h3
@@ -230,7 +254,7 @@ h2
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -249,78 +273,117 @@ h2
     {
         padding: .5rem 1rem .5rem 2rem;
     }
-input::placeholder
-{   
-    color: var(--black);
-    opacity: .5;
-}
 
-.account-content
-{
-    display: grid;
-    grid-template-columns: 0fr 1fr;
-    gap: 1rem;
-}
+    .account-content
+    {
+        gap: 2rem;
+    }
     .avatar img
-{
-    background-color: var(--black);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-.username-data
-{
-    color: var(--black);
-    font-family: 'Libre Franklin', sans-serif;
-    font-weight: 700;
-    letter-spacing: .1rem;
-    font-size: 14px;
-}
-.id-data
-{
-    color: var(--search-color);
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    margin-top: .5rem;
-}
-.join-data
-{
-    color: var(--black);
-    font-family: 'Red Hat Mono', monospace;
-    font-size: 12px;
-    margin-top: .5rem;
-}
-.bio-data
-{
-    color: var(--black);
-    margin: 1.5rem 0;
-    font-size: 12px;
-    letter-spacing: .2rem;
-    font-family: 'Space Mono', monospace;
-}
-h3
-{
-    color: var(--black);
-    font-size: 10px;
-    font-weight: 400;
-    font-family: 'Red Hat Mono', monospace;
-    margin: 0;
+    {
+        width: 110px;
+        height: 110px;
+    }
+    .username-data
+    {
+        font-weight: 700;
+        letter-spacing: .2rem;  
+        font-size: 20px;
+    }
+    .id-data
+    {
+        font-size: 14px;
+        margin-top: .4rem;
+    }
+    .join-data
+    {
+        font-size: 14px;
+        margin-top: .4rem;
+    }
+    .bio-data
+    {
+        margin: 1.5rem 0;
+        font-size: 14px;
+        letter-spacing: .1rem;
+    }
+
+    h3
+    {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    h2
+    {
+        font-size: 20px;
+        margin-top: .5rem;
+    }
+    .account-data
+    {
+        padding: 1rem 5rem;
+    }
 }
 
-h2
+@media (min-width: 1440px)
 {
-    margin: 0;
-    color: var(--black);
-    font-size: 16px;
-    margin-top: .5rem;
-}
+    main
+    {
+        width: 1000px;
+    }
 
-.data-class
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .account
+    {
+        margin-top: 1rem;
+        padding: 3rem;
+    }
+    .account-content
+    {
+        gap: 2rem;
+    }
+    .account-info
+    {
+        display: grid;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+    .join-data
+    {
+        font-size: 14px;
+        margin-top: 0rem;
+        order: 2;
+        grid-area: 1 / 2 / 4 / 3;
+        display: flex;
+        justify-content: right;
+    }
+    .bio-data
+    {
+        margin: 1.5rem 0;
+        font-size: 16px;
+        letter-spacing: .1rem;
+    }
+    .location-data
+    {
+        display: flex;
+        align-items: center;
+        order: 4;
+        color: var(--search-color);
+        opacity: .7;
+    }
+    .location-text
+    {
+        margin-left: .3rem;
+    }
 
+    h3
+    {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    h2
+    {
+        font-size: 24px;
+        margin-top: .5rem;
+    }
+    .account-data
+    {
+        padding: 1rem 8rem;
+    }
 }
